@@ -13,9 +13,11 @@
       const width = 600;
       const height = 400;
       const key = getEncryptionKey();
-      let Roriginal, Goriginal,Boriginal, RsecretPic, GsecretPic, BsecretPic;
+      let Roriginal, Goriginal,Boriginal, RsecretPic, GsecretPic, BsecretPic, NumSecPxSTR, NumKey, NumSTR, NumSecPx;
       console.log("Ключ шифрования", key);
-
+      for (let i = 0; i < 417; i++) {
+      NumKey = NumSTR + toString(key.charCodeAt(i));
+       }
       document.querySelector("button").addEventListener("click", () => {
         for (let x = 0; x < width; x++) {
           for (let y = 0; y < height; y++) {
@@ -23,7 +25,7 @@
             const originalPixel = getOriginalPixelColor(x, y);
             Roriginal = r;
             Goriginal = g;
-            Boriginal  = b;
+            Boriginal = b;
             
             // Получение пикселя зашифрованного сообщения
             const secretPixel = getMessagePixelColor(x, y);
@@ -31,7 +33,9 @@
             RsecretPic = r - Roriginal;
             GsecretPic = g - Goriginal;
             BsecretPic = b - Boriginal;
-            
+            NumSecPxSTR = toString(RsecretPic) +  toString(GsecretPic) +  toString(Boriginal); // но єто должна быть строка, как сделать в строку и конкатенировать
+            NumSecPx = parseint(NumSecPxSTR, 10);
+            x = NumSecPx ^ NumKey;
             
           }
         }
