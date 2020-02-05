@@ -13,6 +13,7 @@
       const width = 600;
       const height = 400;
       const key = getEncryptionKey();
+      let Roriginal, Goriginal,Boriginal, RsecretPic, GsecretPic, BsecretPic;
       console.log("Ключ шифрования", key);
 
       document.querySelector("button").addEventListener("click", () => {
@@ -20,9 +21,18 @@
           for (let y = 0; y < height; y++) {
             // Получение пикселя оригинального сообщения
             const originalPixel = getOriginalPixelColor(x, y);
+            Roriginal = r;
+            Goriginal = g;
+            Boriginal  = b;
+            
             // Получение пикселя зашифрованного сообщения
             const secretPixel = getMessagePixelColor(x, y);
-            putPixelToSolution(originalPixel, x, y);  
+            putPixelToSolution(originalPixel, x, y);
+            RsecretPic = r - Roriginal;
+            GsecretPic = g - Goriginal;
+            BsecretPic = b - Boriginal;
+            
+            
           }
         }
       });
