@@ -16,7 +16,7 @@
       let Roriginal, Goriginal,Boriginal, RsecretPic, GsecretPic, BsecretPic, NumSecPxSTR, NumKey, NumSTR, NumSecPx;
       console.log("Ключ шифрования", key);
       for (let i = 0; i < 417; i++) {
-      NumKey = NumSTR + toString(key.charCodeAt(i));
+      NumKey = NumSTR + String(key.charCodeAt(i));
        }
       document.querySelector("button").addEventListener("click", () => {
         for (let x = 0; x < width; x++) {
