@@ -20,10 +20,16 @@
           for (let y = 0; y < height; y++) {
             // Получение пикселя оригинального сообщения
             const originalPixel = getOriginalPixelColor(x, y);
+            console.log("R original",r);
+            console.log("\n");
+            
             // Получение пикселя зашифрованного сообщения
             const secretPixel = getMessagePixelColor(x, y);
-             console.log("Ключ ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ");
-            putPixelToSolution(originalPixel, x, y);
+             console.log("R secret",r);
+            console.log(" \n");
+            
+            
+            //putPixelToSolution(originalPixel, x, y);
           }
         }
       });
