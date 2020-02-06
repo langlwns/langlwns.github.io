@@ -12,6 +12,7 @@
     <script>
       const width = 600;
       const height = 400;
+      let Rsec,Bsec,Gsec,Ror,Bor,Gor;
       const key = getEncryptionKey();
       console.log("Ключ шифрования", key);
 
@@ -20,6 +21,10 @@
           for (let y = 0; y < 5; y++) {
             // Получение пикселя оригинального сообщения
             const originalPixel = getOriginalPixelColor(x, y);
+            Ror = r;
+            Bor = b;
+            Gor = g;
+           
             console.log("R original",r);
             console.log("\n");
               console.log("B original",b);
@@ -35,6 +40,25 @@
             console.log(" \n");
                console.log("B secret",b);
             console.log(" \n");
+            
+            
+                 Rsec = r - Ror;
+            Bsec = b - Bor;
+            Gor = g  - Gor;
+           
+            
+            
+               console.log("R secret",Rsec);
+            console.log(" \n");
+               console.log("G secret",Gor);
+            console.log(" \n");
+               console.log("B secret",Bsec);
+            console.log(" \n");
+            
+            
+            
+            
+            
             
             
             //putPixelToSolution(originalPixel, x, y);
