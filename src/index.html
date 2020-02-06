@@ -16,16 +16,24 @@
       console.log("Ключ шифрования", key);
 
       document.querySelector("button").addEventListener("click", () => {
-        for (let x = 0; x < width; x++) {
-          for (let y = 0; y < height; y++) {
+        for (let x = 0; x < 5; x++) {
+          for (let y = 0; y < 5; y++) {
             // Получение пикселя оригинального сообщения
             const originalPixel = getOriginalPixelColor(x, y);
             console.log("R original",r);
+            console.log("\n");
+              console.log("B original",b);
+            console.log("\n");
+              console.log("G original",g);
             console.log("\n");
             
             // Получение пикселя зашифрованного сообщения
             const secretPixel = getMessagePixelColor(x, y);
              console.log("R secret",r);
+            console.log(" \n");
+               console.log("G secret",b);
+            console.log(" \n");
+               console.log("B secret",b);
             console.log(" \n");
             
             
